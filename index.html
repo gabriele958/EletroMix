@@ -1,59 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="_fymqS353GKHPfsoadO_aaB2Hu4aH1xiPVu4fWrk7I8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EletroMix - Eletrodomésticos Usados</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
     }
-    h1 {
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px 0;
       text-align: center;
     }
-    form {
-      max-width: 400px;
-      margin: auto;
-      background: white;
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .produto {
+      background: white;
+      padding: 15px;
       border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .produto img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     input, textarea, button {
-      width: 100%;
       padding: 10px;
-      margin: 8px 0;
-      border-radius: 4px;
       border: 1px solid #ccc;
+      border-radius: 5px;
     }
     button {
-      background: #4CAF50;
+      background-color: #333;
       color: white;
       border: none;
       cursor: pointer;
     }
     button:hover {
-      background: #45a049;
+      background-color: #555;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Contato - EletroMix</h1>
+  <header>
+    <h1>EletroMix</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-  <form action="https://formspree.io/f/xldlzwjz" method="POST">
-    <label>Nome:</label>
-    <input type="text" name="name" required>
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A EletroMix é especializada na compra e venda de eletrodomésticos usados em excelente estado. Trabalhamos para oferecer qualidade e economia aos nossos clientes.</p>
+  </section>
 
-    <label>Email:</label>
-    <input type="email" name="_replyto" required>
+  <section id="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="https://via.placeholder.com/250" alt="Geladeira">
+        <h3>Geladeira Usada</h3>
+        <p>Excelente estado, pronta para uso.</p>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/250" alt="Fogão">
+        <h3>Fogão Usado</h3>
+        <p>Funcionando perfeitamente.</p>
+      </div>
+      <div class="produto">
+        <img src="https://via.placeholder.com/250" alt="Micro-ondas">
+        <h3>Micro-ondas Usado</h3>
+        <p>Limpo e pronto para uso.</p>
+      </div>
+    </div>
+  </section>
 
-    <label>Mensagem:</label>
-    <textarea name="message" rows="5" required></textarea>
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <form action="https://formspree.io/f/xldlzwjz" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
-    <button type="submit">Enviar</button>
-  </form>
+  <footer>
+    <p>&copy; 2025 EletroMix - Todos os direitos reservados</p>
+  </footer>
 </body>
 </html>
